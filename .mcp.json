@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "runcrate": {
+      "type": "http",
+      "url": "https://mcp.runcrate.ai/mcp"
+    }
+  }
+}

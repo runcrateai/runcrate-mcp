@@ -1,0 +1,116 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "runcrate",
+  "version": "1.1.0",
+  "description": "GPU cloud for AI developers and agents. Launch GPUs by the hour, run commands as jobs that stop their own billing, schedule runs, and manage volumes, the firewall and spend from your agent.",
+  "author": {
+    "name": "Runcrate",
+    "email": "support@runcrate.ai",
+    "url": "https://runcrate.ai"
+  },
+  "homepage": "https://runcrate.ai/mcp",
+  "repository": "https://github.com/aeonmindai/runcrate-mcp",
+  "license": "MIT",
+  "keywords": [
+    "gpu",
+    "gpu-cloud",
+    "mcp",
+    "ai-agents",
+    "training",
+    "fine-tuning",
+    "inference",
+    "jobs",
+    "runcrate"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Runcrate",
+        "shortDescription": "GPUs and jobs for your agent",
+        "longDescription": "Runcrate is a GPU cloud for AI developers and agents. Connect it and ask in plain words: see live GPU prices, launch a GPU on a ready image, run a command as a job on its own machine and read its output, schedule a run for later or on a repeat, copy small files to and from a machine, keep files on volumes, open ports with HTTPS links, and check your balance, spend and environment budget.\n\nYou sign in through your browser and pick one environment. The plugin acts only in that environment, and its monthly budget caps what it can spend. A job's machine stops, with its billing, when the command exits. Instances can carry a max runtime and an idle stop.\n\nLimits: it cannot create API keys, change budgets, or act outside the environment you picked. Launching GPUs and running jobs spends credits from your Runcrate balance.",
+        "developerName": "Runcrate",
+        "category": "Developer Tools",
+        "capabilities": [
+          "See live GPU prices",
+          "Launch and stop GPU instances",
+          "Run commands as GPU jobs",
+          "Read job output",
+          "Schedule runs",
+          "Copy files to and from machines",
+          "Manage volumes",
+          "Manage firewall rules",
+          "Check spend and budgets"
+        ],
+        "websiteURL": "https://runcrate.ai/mcp",
+        "supportURL": "https://runcrate.ai/contact",
+        "privacyPolicyURL": "https://www.runcrate.ai/privacy",
+        "termsOfServiceURL": "https://www.runcrate.ai/terms",
+        "defaultPrompt": [
+          "What does an H100 cost per hour right now?",
+          "Run nvidia-smi on an H100 as a job and show me the output.",
+          "How much of my monthly budget is left?"
+        ],
+        "brandColor": "#2F4FD8",
+        "brandColorDark": "#6E8BFF",
+        "composerIcon": "./assets/logo.png",
+        "logo": "./assets/logo.png"
+      },
+      "onboardingSkill": "./skills/runcrate/SKILL.md",
+      "review": {
+        "test_cases": {
+          "positive": [
+            {
+              "description": "Live GPU prices",
+              "prompt": "What GPUs can I rent right now and what do they cost per hour?",
+              "tools_triggered": "list_gpu_types",
+              "expected_behavior": "Lists available GPU types with their live price per GPU-hour from the account's catalog."
+            },
+            {
+              "description": "Run a command as a job",
+              "prompt": "Run nvidia-smi on an H100 as a job, with a 10 minute limit, and show me the output.",
+              "tools_triggered": "list_gpu_types, run_job, get_job_logs, get_job",
+              "expected_behavior": "States the hourly rate, starts a job with max_runtime_minutes 10, streams its output until done, then reports the exit code and the final cost. The machine stops when the command exits."
+            },
+            {
+              "description": "Check balance and budget",
+              "prompt": "How much credit do I have, and how much of this environment's budget is left this month?",
+              "tools_triggered": "billing_balance, get_environment_budget",
+              "expected_behavior": "Reports the credit balance and the environment's monthly cap, spend so far and what is left."
+            },
+            {
+              "description": "List and stop instances",
+              "prompt": "Which instances are running? Stop the one called scratch.",
+              "tools_triggered": "list_instances, delete_instance",
+              "expected_behavior": "Lists instances with status and cost, asks to confirm, then terminates scratch and confirms billing stopped."
+            },
+            {
+              "description": "Schedule a nightly run",
+              "prompt": "Every night at 2am London time, run python train.py on an A100 for at most 3 hours.",
+              "tools_triggered": "create_schedule, list_schedules",
+              "expected_behavior": "Creates a recurring job schedule with cron 0 2 * * *, timezone Europe/London and max_runtime_minutes 180, then shows its next run time."
+            }
+          ],
+          "negative": [
+            {
+              "description": "Raising a budget is not allowed from the agent",
+              "prompt": "Raise this environment's monthly budget to $5,000."
+            },
+            {
+              "description": "Acting outside the signed-in environment",
+              "prompt": "Launch a GPU in my production environment instead."
+            },
+            {
+              "description": "Unrelated request",
+              "prompt": "Book me a flight to Berlin."
+            }
+          ]
+        },
+        "commerce": false,
+        "commerce_description": "The plugin does not sell products or take payments in chat. Launching GPUs and running jobs spends credits the user already holds on Runcrate."
+      },
+      "publication": {
+        "release_notes": "First release: 37 tools for GPU instances, jobs, schedules, files, volumes, the firewall, billing and environments."
+      }
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "name": "runcrate",
+  "owner": {
+    "name": "Runcrate",
+    "email": "support@runcrate.ai",
+    "url": "https://runcrate.ai"
+  },
+  "description": "Runcrate's plugins for Claude Code: GPUs by the hour, jobs and schedules from your agent.",
+  "plugins": [
+    {
+      "name": "runcrate",
+      "source": "./",
+      "description": "GPU cloud for AI developers and agents. Launch GPUs by the hour, run commands as jobs that stop their own billing, schedule runs, and manage volumes, the firewall and spend from your agent.",
+      "version": "1.1.0",
+      "author": {
+        "name": "Runcrate",
+        "email": "support@runcrate.ai",
+        "url": "https://runcrate.ai"
+      },
+      "homepage": "https://runcrate.ai/mcp",
+      "repository": "https://github.com/aeonmindai/runcrate-mcp",
+      "license": "MIT",
+      "keywords": [
+        "gpu",
+        "gpu-cloud",
+        "mcp",
+        "ai-agents",
+        "training",
+        "fine-tuning",
+        "inference",
+        "jobs",
+        "runcrate"
+      ],
+      "category": "development"
+    }
+  ]
+}
