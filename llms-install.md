@@ -3,7 +3,8 @@
 Runcrate's MCP server is hosted. There is nothing to clone, build or run locally, and no API key.
 
 1. Add a remote server named `runcrate` with transport streamable HTTP and the URL `https://mcp.runcrate.ai/mcp`.
-   For Cline, add this to `cline_mcp_settings.json`:
+   With the Cline CLI: `cline mcp add runcrate https://mcp.runcrate.ai/mcp --transport streamableHttp --yes`.
+   Or add this to `cline_mcp_settings.json`:
 
    ```json
    {
