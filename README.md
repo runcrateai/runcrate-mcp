@@ -138,5 +138,7 @@ The server itself is hosted by Runcrate; this repo only packages the connection.
 - Product: https://runcrate.ai/mcp
 - CLI: https://github.com/aeonmindai/runcrate-cli
 - Support: support@runcrate.ai
+- Privacy: https://www.runcrate.ai/privacy
+- Terms: https://www.runcrate.ai/terms
 
 MIT licensed.
