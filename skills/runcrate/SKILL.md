@@ -5,7 +5,7 @@ description: Launch and run GPU work on Runcrate through its MCP tools. Use when
 
 # Runcrate
 
-Runcrate is a GPU cloud you drive in plain words. The `runcrate` MCP server gives you 46 tools on the user's own account. The user signed in through the browser and picked one environment; you act only in that environment, and its monthly budget caps what you can spend.
+Runcrate is a GPU cloud you drive in plain words. The `runcrate` MCP server gives you 47 tools on the user's own account. The user signed in through the browser and picked one environment; you act only in that environment, and its monthly budget caps what you can spend.
 
 ## Pick the right shape of work
 
@@ -29,6 +29,10 @@ Runcrate is a GPU cloud you drive in plain words. The `runcrate` MCP server give
 ## Firewall
 
 New environments allow only SSH (port 22). `add_firewall_rule` opens a port on every machine in the environment; set `https: true` on a single TCP port to get an HTTPS link to a web app or API. Only owners and admins can change it.
+
+## Secrets
+
+`list_secrets` shows the names of the environment's secrets (never values). Every instance and job launched there gets them as environment variables, so a command can read `$HF_TOKEN` directly. A value passed for one launch (`run_job` `variables`) wins over a secret of the same name. When a command needs a token that is not listed, ask the user to add it in the dashboard (https://runcrate.ai/dashboard/settings/secrets); never ask them to paste a value into the chat.
 
 ## When something fails
 
