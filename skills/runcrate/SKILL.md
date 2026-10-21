@@ -5,7 +5,7 @@ description: Launch and run GPU work on Runcrate through its MCP tools. Use when
 
 # Runcrate
 
-Runcrate is a GPU cloud you drive in plain words. The `runcrate` MCP server gives you 48 tools on the user's own account. The user signed in through the browser and picked one environment; you act only in that environment, and its monthly budget caps what you can spend.
+Runcrate is a GPU cloud you drive in plain words. The `runcrate` MCP server gives you 46 tools on the user's own account. The user signed in through the browser and picked one environment; you act only in that environment, and its monthly budget caps what you can spend.
 
 ## Pick the right shape of work
 
