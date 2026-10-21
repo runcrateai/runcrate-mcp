@@ -19,7 +19,7 @@ Runcrate is a GPU cloud you drive in plain words. The `runcrate` MCP server give
 2. Always set `max_runtime_minutes` to a realistic upper bound. On an instance left unattended, also set `idle_shutdown_minutes`. When either fires the machine is terminated, not paused, so copy results off first.
 3. When work on an instance is done, stop it with `delete_instance`. Billing stops at once.
 4. `get_environment_budget` shows the cap, what is spent this month and what is left. At 100% launches fail and running machines stop. Only a workspace owner or admin changes a budget, in the dashboard.
-5. Ask before destructive calls: `delete_instance`, `delete_volume`, `delete_environment`, `remove_firewall_rule`, `cancel_job`.
+5. Ask before destructive calls: `delete_instance`, `delete_volume`, `remove_firewall_rule`, `cancel_job`.
 
 ## Files and storage
 
