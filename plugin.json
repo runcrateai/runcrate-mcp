@@ -109,7 +109,7 @@
         "commerce_description": "The plugin does not sell products or take payments in chat. Launching GPUs and running jobs spends credits the user already holds on Runcrate."
       },
       "publication": {
-        "release_notes": "First release: 37 tools for GPU instances, jobs, schedules, files, volumes, the firewall, billing and environments."
+        "release_notes": "First release: 48 tools for GPU instances, jobs, schedules, files, volumes, the firewall and HTTPS links, billing and environments."
       }
     }
   }
