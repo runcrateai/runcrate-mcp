@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "runcrate",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "GPU cloud for AI developers and agents. Launch GPUs by the hour, run commands as jobs that stop their own billing, schedule runs, and manage volumes, the firewall and spend from your agent.",
   "author": {
     "name": "Runcrate",
@@ -109,7 +109,7 @@
         "commerce_description": "The plugin does not sell products or take payments in chat. Launching GPUs and running jobs spends credits the user already holds on Runcrate."
       },
       "publication": {
-        "release_notes": "First release: 46 tools for GPU instances, jobs, schedules, files, volumes, the firewall and HTTPS links, billing and environments."
+        "release_notes": "47 tools for GPU instances, jobs, schedules, files, volumes, the firewall and HTTPS links, billing, environments and secret names. New: list_secrets shows which secrets an environment's machines get, never their values."
       }
     }
   }
