@@ -33,7 +33,7 @@ Then run `/mcp` in Claude Code and pick `runcrate`: your browser opens to sign i
 Or install the plugin, which adds the server and a skill that teaches Claude how to spend safely:
 
 ```
-/plugin marketplace add aeonmindai/runcrate-mcp
+/plugin marketplace add runcrateai/runcrate-mcp
 /plugin install runcrate@runcrate
 ```
 
@@ -60,7 +60,7 @@ Codex opens your browser to sign in. Closed it? Run `codex mcp login runcrate`.
 ### Gemini CLI
 
 ```bash
-gemini extensions install https://github.com/aeonmindai/runcrate-mcp
+gemini extensions install https://github.com/runcrateai/runcrate-mcp
 ```
 
 ### Windsurf and Devin
@@ -136,7 +136,7 @@ The server itself is hosted by Runcrate; this repo only packages the connection.
 
 - Docs: https://runcrate.ai/docs/mcp/setup
 - Product: https://runcrate.ai/mcp
-- CLI: https://github.com/aeonmindai/runcrate-cli
+- CLI: https://github.com/runcrateai/runcrate-cli
 - Support: support@runcrate.ai
 - Privacy: https://www.runcrate.ai/privacy
 - Terms: https://www.runcrate.ai/terms

@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "runcrate",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "GPU cloud for AI developers and agents. Launch GPUs by the hour, run commands as jobs that stop their own billing, schedule runs, and manage volumes, the firewall and spend from your agent.",
   "author": {
     "name": "Runcrate",
@@ -9,7 +9,7 @@
     "url": "https://runcrate.ai"
   },
   "homepage": "https://runcrate.ai/mcp",
-  "repository": "https://github.com/aeonmindai/runcrate-mcp",
+  "repository": "https://github.com/runcrateai/runcrate-mcp",
   "license": "MIT",
   "keywords": [
     "gpu",

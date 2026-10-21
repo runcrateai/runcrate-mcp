@@ -1,6 +1,6 @@
 {
   "name": "runcrate",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "GPU cloud for AI developers and agents. Launch GPUs by the hour, run commands as jobs that stop their own billing, schedule runs, and manage volumes, the firewall and spend from your agent.",
   "mcpServers": {
     "runcrate": {
