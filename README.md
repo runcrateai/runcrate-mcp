@@ -12,11 +12,26 @@ You pick one environment when you sign in. The agent acts only there, and that e
 
 ## Connect your agent
 
+Paste this one line into your agent: Claude Code, Codex, Cursor, VS Code, OpenCode, or any agent that can run a command. It adds the server to itself, and its first Runcrate tool call opens your browser to sign in.
+
+```text
+Add Runcrate's MCP server to yourself: run curl -fsSL "https://runcrate.ai/mcp.md" and follow it.
+```
+
+Or one click:
+
 [![Add to Cursor](https://cursor.com/deeplink/mcp-install-dark.svg)](https://cursor.com/en/install-mcp?name=runcrate&config=eyJ1cmwiOiJodHRwczovL21jcC5ydW5jcmF0ZS5haS9tY3AifQ==)
 [![Install in VS Code](https://img.shields.io/badge/VS_Code-Install_Runcrate-0098FF?style=flat-square&logo=visualstudiocode&logoColor=white)](https://vscode.dev/redirect/mcp/install?name=runcrate&config=%7B%22type%22%3A%22http%22%2C%22url%22%3A%22https%3A%2F%2Fmcp.runcrate.ai%2Fmcp%22%7D)
 [![Install in VS Code Insiders](https://img.shields.io/badge/VS_Code_Insiders-Install_Runcrate-24bfa5?style=flat-square&logo=visualstudiocode&logoColor=white)](https://insiders.vscode.dev/redirect/mcp/install?name=runcrate&config=%7B%22type%22%3A%22http%22%2C%22url%22%3A%22https%3A%2F%2Fmcp.runcrate.ai%2Fmcp%22%7D&quality=insiders)
 
-Or let the Runcrate CLI find your clients and connect them all:
+In Claude Code, the plugin adds the server and a skill that teaches Claude how to spend safely: `/plugin marketplace add runcrateai/runcrate-mcp`, then `/plugin install runcrate@runcrate`. In Gemini CLI: `gemini extensions install https://github.com/runcrateai/runcrate-mcp`.
+
+Claude and ChatGPT on the web can't run a command, so they take the URL as a custom connector (steps below).
+
+<details>
+<summary>Set it up by hand</summary>
+
+With the Runcrate CLI, one command connects every client it finds on your machine:
 
 ```bash
 runcrate mcp install
@@ -29,13 +44,6 @@ claude mcp add --transport http --scope user runcrate https://mcp.runcrate.ai/mc
 ```
 
 Then run `/mcp` in Claude Code and pick `runcrate`: your browser opens to sign in.
-
-Or install the plugin, which adds the server and a skill that teaches Claude how to spend safely:
-
-```
-/plugin marketplace add runcrateai/runcrate-mcp
-/plugin install runcrate@runcrate
-```
 
 ### Claude (claude.ai and Claude Desktop)
 
@@ -57,12 +65,6 @@ codex mcp add runcrate --url https://mcp.runcrate.ai/mcp
 
 Codex opens your browser to sign in. Closed it? Run `codex mcp login runcrate`.
 
-### Gemini CLI
-
-```bash
-gemini extensions install https://github.com/runcrateai/runcrate-mcp
-```
-
 ### Windsurf and Devin
 
 Run `runcrate mcp install --client windsurf`, or add a server in Cascade's MCP settings with the URL `https://mcp.runcrate.ai/mcp`. Devin CLI: `devin mcp add -s user runcrate https://mcp.runcrate.ai/mcp`, then `devin mcp login runcrate`.
@@ -71,8 +73,7 @@ Run `runcrate mcp install --client windsurf`, or add a server in Cascade's MCP s
 
 Give the client the URL `https://mcp.runcrate.ai/mcp` and choose OAuth (dynamic registration). It signs you in through your browser on first use.
 
-<details>
-<summary>Prefer editing the config file yourself?</summary>
+### Config files
 
 Cursor (`~/.cursor/mcp.json`), Warp (`~/.warp/.mcp.json`) and most clients:
 
