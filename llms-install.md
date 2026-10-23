@@ -2,6 +2,8 @@
 
 Runcrate's MCP server is hosted. There is nothing to clone, build or run locally, and no API key.
 
+The current steps for every agent are at https://runcrate.ai/mcp.md. Fetch them and follow the section for the agent you are: `curl -fsSL "https://runcrate.ai/mcp.md"`. If you are Cline, these are the steps:
+
 1. Add a remote server named `runcrate` with transport streamable HTTP and the URL `https://mcp.runcrate.ai/mcp`.
    With the Cline CLI: `cline mcp add runcrate https://mcp.runcrate.ai/mcp --transport streamableHttp --yes`.
    Or add this to `cline_mcp_settings.json`:
