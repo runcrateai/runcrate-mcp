@@ -5,12 +5,13 @@ description: Launch and run GPU work on Runcrate through its MCP tools. Use when
 
 # Runcrate
 
-Runcrate is a GPU cloud you drive in plain words. The `runcrate` MCP server gives you 47 tools on the user's own account. The user signed in through the browser and picked one environment; you act only in that environment, and its monthly budget caps what you can spend.
+Runcrate is a GPU cloud you drive in plain words. The `runcrate` MCP server gives you 57 tools on the user's own account. The user signed in through the browser and picked one environment; you act only in that environment, and its monthly budget caps what you can spend.
 
 ## Pick the right shape of work
 
 - **One command that ends** (a training run, a fine-tune, a benchmark, a script): use `run_job`. It runs the command on its own fresh GPU machine under bash in `/workspace`, and the machine stops, with its billing, as soon as the command exits. Follow it with `get_job_logs` (pass the returned cursor as `after`, `follow: true` to wait for new output) until `done` is true, then `get_job` for the exit code and the final cost.
 - **A machine the user keeps working on** (a notebook, a server, interactive debugging): use `create_instance`, then `ssh_execute`, `file_upload` and `file_download`. The user can open a terminal on it with `runcrate ssh <name>`.
+- **Several machines as one** (a Slurm, Kubernetes or Ray cluster, or the same job on many machines): `cluster_offers`, then `create_cluster` with an `offer_id`. A cluster is bought by the machine (1, 2, 4 or 8 GPUs each); show the user `hourly_rate` for the whole cluster and `hourly_rate_per_node` per machine first. It starts whole or not at all, is billed from when every machine is up, and has no auto stop: `delete_cluster` when done. Poll `get_cluster` until `status` is `ready`. Its machines run on Ethernet, so it suits independent jobs, job arrays and Ray tasks, not training one model across machines.
 - **Later or on a repeat**: `create_schedule` with `run_at` (once) or `cron` and a timezone.
 
 ## Spend rules
@@ -19,7 +20,7 @@ Runcrate is a GPU cloud you drive in plain words. The `runcrate` MCP server give
 2. Always set `max_runtime_minutes` to a realistic upper bound. On an instance left unattended, also set `idle_shutdown_minutes`. When either fires the machine is terminated, not paused, so copy results off first.
 3. When work on an instance is done, stop it with `delete_instance`. Billing stops at once.
 4. `get_environment_budget` shows the cap, what is spent this month and what is left. At 100% launches fail and running machines stop. Only a workspace owner or admin changes a budget, in the dashboard.
-5. Ask before destructive calls: `delete_instance`, `delete_volume`, `remove_firewall_rule`, `delete_instance_link`, `cancel_job`.
+5. Ask before destructive calls: `delete_instance`, `delete_volume`, `remove_firewall_rule`, `delete_instance_link`, `cancel_job`, `delete_cluster`.
 
 ## Files and storage
 

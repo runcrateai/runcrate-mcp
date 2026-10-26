@@ -6,7 +6,7 @@ Give your AI agent GPUs. Runcrate is a GPU cloud for AI developers and agents: c
 
 - Server: `https://mcp.runcrate.ai/mcp` (streamable HTTP)
 - Sign-in: OAuth in your browser. No key to copy, nothing to paste into a config file.
-- 47 tools: instances, jobs, schedules, files, volumes, firewall and HTTPS links, billing, environments and secret names. [Tool reference](https://runcrate.ai/docs/mcp/tools)
+- 57 tools: instances, clusters, jobs, schedules, files, volumes, firewall and HTTPS links, billing, environments and secret names. [Tool reference](https://runcrate.ai/docs/mcp/tools)
 
 You pick one environment when you sign in. The agent acts only there, and that environment's monthly budget caps what it can spend.
 
