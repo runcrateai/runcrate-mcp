@@ -9,7 +9,7 @@ metadata:
 
 # Runcrate
 
-Runcrate is a GPU cloud you drive in plain words, paid from prepaid credits: no commitment, no minimum, no quota requests, and credits never expire. The listed rate is the rate, for any GPU in stock. A person can also top up without a credit card in the dashboard.
+Runcrate is the GPU marketplace you drive in plain words, paid from prepaid credits: no commitment, no minimum, no quota requests, and credits never expire. Prices are listed per GPU-hour and differ by region and machine, so read them live before you launch. A person can also top up without a credit card in the dashboard.
 
 The `runcrate` MCP server and the `runcrate` CLI both act on the user's own account. The user signs in through the browser and picks one environment; you act only in that environment, and its monthly budget caps what you can spend. Never ask for a key or a password.
 

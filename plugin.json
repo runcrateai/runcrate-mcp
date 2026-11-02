@@ -1,8 +1,8 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "runcrate",
-  "version": "1.4.0",
-  "description": "GPU cloud for AI developers and agents. Launch GPUs by the hour, run commands as jobs that stop their own billing, schedule runs, and manage volumes, the firewall and spend from your agent.",
+  "version": "1.4.1",
+  "description": "The GPU marketplace for AI developers and agents. Launch GPUs by the hour, run commands as jobs that stop their own billing, schedule runs, and manage volumes, the firewall and spend from your agent.",
   "author": {
     "name": "Runcrate",
     "email": "support@runcrate.ai",
@@ -27,7 +27,7 @@
       "interface": {
         "displayName": "Runcrate",
         "shortDescription": "GPUs and jobs for your agent",
-        "longDescription": "Runcrate is a GPU cloud for AI developers and agents. Connect it and ask in plain words: see live GPU prices, launch a GPU on a ready image, run a command as a job on its own machine and read its output, schedule a run for later or on a repeat, copy small files to and from a machine, keep files on volumes, open ports with HTTPS links, and check your balance, spend and environment budget.\n\nYou sign in through your browser and pick one environment. The plugin acts only in that environment, and its monthly budget caps what it can spend. A job's machine stops, with its billing, when the command exits. Instances can carry a max runtime and an idle stop.\n\nLimits: it cannot create API keys, change budgets, or act outside the environment you picked. Launching GPUs and running jobs spends credits from your Runcrate balance.",
+        "longDescription": "Runcrate is the GPU marketplace for AI developers and agents. Connect it and ask in plain words: see live GPU prices, launch a GPU on a ready image, run a command as a job on its own machine and read its output, schedule a run for later or on a repeat, copy small files to and from a machine, keep files on volumes, open ports with HTTPS links, and check your balance, spend and environment budget.\n\nYou sign in through your browser and pick one environment. The plugin acts only in that environment, and its monthly budget caps what it can spend. A job's machine stops, with its billing, when the command exits. Instances can carry a max runtime and an idle stop.\n\nLimits: it cannot create API keys, change budgets, or act outside the environment you picked. Launching GPUs and running jobs spends credits from your Runcrate balance.",
         "developerName": "Runcrate",
         "category": "Developer Tools",
         "capabilities": [
@@ -109,7 +109,7 @@
         "commerce_description": "The plugin does not sell products or take payments in chat. Launching GPUs and running jobs spends credits the user already holds on Runcrate."
       },
       "publication": {
-        "release_notes": "57 tools for GPU instances, clusters, jobs, schedules, files, volumes, the firewall and HTTPS links, billing, environments and secret names. New: GPU clusters, bought by the machine, all or nothing, with Slurm, Kubernetes or Ray (cluster_offers, create_cluster, list_clusters, get_cluster, run_cluster_nccl_test, get_cluster_kubeconfig, delete_cluster)."
+        "release_notes": "Tools for GPU instances, clusters, jobs, schedules, files, volumes, the firewall and HTTPS links, billing, environments and secret names. New in 1.4.1: Runcrate described as the GPU marketplace it is, with no fixed tool count (the live list is at runcrate.ai/docs/mcp/tools)."
       }
     }
   }
