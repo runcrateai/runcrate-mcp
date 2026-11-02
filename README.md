@@ -26,6 +26,8 @@ Or one click:
 
 In Claude Code, the plugin adds the server and a skill that teaches Claude how to spend safely: `/plugin marketplace add runcrateai/runcrate-mcp`, then `/plugin install runcrate@runcrate`. In Gemini CLI: `gemini extensions install https://github.com/runcrateai/runcrate-mcp`.
 
+The same skill installs into Codex, Cursor, Gemini CLI and other agents that read [Agent Skills](https://agentskills.io): `npx skills add runcrateai/runcrate-mcp --skill runcrate`. It teaches your agent to check live prices (`https://www.runcrate.ai/pricing.md`), run work with a max runtime, stop what it started, and top up when the balance runs low.
+
 Claude and ChatGPT on the web can't run a command, so they take the URL as a custom connector (steps below).
 
 <details>
